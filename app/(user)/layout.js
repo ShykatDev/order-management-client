@@ -4,7 +4,7 @@ const UserLayout = ({ children }) => {
   return (
     <div>
       <MainNavbar />
-      <div className="container">{children}</div>
+      <div className="mt-12 container py-6">{children}</div>
     </div>
   );
 };

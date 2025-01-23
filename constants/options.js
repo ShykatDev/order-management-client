@@ -17,3 +17,16 @@ export const userNavOptions = [
         icon: ShoppingCartIcon,
     },
 ]
+
+export const bgColorOptions = [
+    "#fef2f2",
+    "#eff6ff",
+    "#f0fdf4",
+    "#fefce8",
+    "#f5f3ff",
+    "#eef2ff",
+    "#f0fdfa",
+    "#ecfeff",
+    "#fdf2f8",
+    "#f5f3ff",
+]

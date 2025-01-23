@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="py-10 h-[calc(100vh-50px)] flex flex-col justify-center items-center">
+    <div className="h-[calc(100vh-100px)] flex flex-col justify-center items-center">
       <h1 className="text-3xl lg:text-7xl text-center">
         A place to discover <br /> masterpiece products.
       </h1>

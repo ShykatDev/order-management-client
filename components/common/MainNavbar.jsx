@@ -6,7 +6,7 @@ import Logo from "./Logo"
 
 const MainNavbar = () => {
   return (
-        <div className="border-b border-gray-200">
+        <div className="border-b border-gray-200 fixed top-0 left-0 right-0 bg-white/50 backdrop-blur-md z-50">
             <div className="container py-2 flex items-center justify-between">
                 <Logo />
                 <div className="flex items-center gap-8">
