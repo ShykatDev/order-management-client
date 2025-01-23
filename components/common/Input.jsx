@@ -4,6 +4,7 @@ import { EyeClosedIcon, EyeIcon } from 'lucide-react'
 import { useState } from 'react'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
+import { Textarea } from '../ui/textarea'
 
 const GenInput = ({ id, label, children, formik }) => {
     const error = formik.errors[id];
@@ -21,6 +22,12 @@ const GenInput = ({ id, label, children, formik }) => {
 GenInput.Default = (props) => {
     return (
         <Input {...props} />
+    )
+}
+
+GenInput.TextAreaInp = (props) => {
+    return (
+        <Textarea placeholder="Type your description here." {...props}/>
     )
 }
 

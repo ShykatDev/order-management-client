@@ -1,4 +1,4 @@
-import { PartyPopperIcon, ShoppingBasket, ShoppingCartIcon } from "lucide-react";
+import { BoxIcon, PartyPopperIcon, ShoppingBasket, ShoppingCartIcon, WeightIcon } from "lucide-react";
 
 export const userNavOptions = [
     {
@@ -15,6 +15,24 @@ export const userNavOptions = [
         label: 'Cart',
         href: '/cart',
         icon: ShoppingCartIcon,
+    },
+]
+
+export const adminNavOptions = [
+    {
+        label: 'Products',
+        href: '/admin/products',
+        icon: BoxIcon,
+    },
+    {
+        label: 'Promotions',
+        href: '/admin/promotions',
+        icon: PartyPopperIcon,
+    },
+    {
+        label: 'Weight Slabs',
+        href: '/admin/weight-slabs',
+        icon: WeightIcon,
     },
 ]
 

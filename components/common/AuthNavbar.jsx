@@ -4,7 +4,7 @@ import Logo from "./Logo"
 
 const AuthNavbar = () => {
     return (
-        <div className="border-b border-gray-200">
+        <div className="">
             <div className="container py-2 flex items-center justify-between">
                 <Logo />
                 <Link href="/" className="flex items-center gap-1 hover:underline">
