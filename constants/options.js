@@ -1,4 +1,4 @@
-import { BoxIcon, PartyPopperIcon, ShoppingBasket, ShoppingCartIcon, WeightIcon } from "lucide-react";
+import { BoxIcon, PartyPopperIcon, ShoppingBasket, ShoppingCartIcon, TruckIcon, WeightIcon } from "lucide-react";
 
 export const userNavOptions = [
     {
@@ -33,6 +33,11 @@ export const adminNavOptions = [
         label: 'Weight Slabs',
         href: '/admin/weight-slabs',
         icon: WeightIcon,
+    },
+    {
+        label: 'Orders',
+        href: '/admin/orders',
+        icon: TruckIcon,
     },
 ]
 
