@@ -45,7 +45,7 @@ export const columns = [
             const { enabled } = row.original
 
             return (
-                <Switch checked={enabled} onCheckedChange={() => { }}
+                <Switch checked={enabled} onCheckedChange={() => {  }}
                 />
             )
         }
