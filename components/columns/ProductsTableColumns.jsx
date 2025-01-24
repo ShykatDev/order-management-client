@@ -26,11 +26,13 @@ export const columns = [
         accessorKey: "promotion",
         header: "Promotion",
         cell: ({ row }) => {
-            const { promotion } = row.original;
+            const { promotions } = row.original;
+            console.log(promotions);
+            
             return (
-                <span>{promotion.length ? <div className="flex flex-col gap-1">
-                    {promotion.map((promo, index) => (
-                        <span key={index} className="bg-green-100 text-green-700 px-2 rounded w-fit">{promo}</span>
+                <span>{promotions?.length ? <div className="flex flex-col gap-1">
+                    {promotions?.map((promo, index) => (
+                        <span key={index} className="bg-green-100 text-green-700 px-2 rounded w-fit capitalize">{promo?.promotion_type?.type}</span>
                     ))}
                 </div> : <XCircleIcon size={16} className="text-red-500" />}</span>
             )

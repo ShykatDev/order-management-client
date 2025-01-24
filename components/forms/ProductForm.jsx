@@ -1,6 +1,9 @@
 'use client'
 
+import API from "@/config/api";
+import { useQueryClient } from "@tanstack/react-query";
 import { useFormik } from "formik";
+import toast from "react-hot-toast";
 import * as yup from "yup";
 import GenInput from "../common/Input";
 import { Button } from "../ui/button";
@@ -12,7 +15,10 @@ const validationSchema = yup.object({
     description: yup.string().required("Description is required"),
 });
 
-const ProductForm = ({onClose}) => {
+const ProductForm = ({ onClose }) => {
+    const queryClient = useQueryClient()
+
+    queryClient.invalidateQueries({ queryKey: ['todos'] })
     const formik = useFormik({
         initialValues: {
             name: "",
@@ -21,8 +27,16 @@ const ProductForm = ({onClose}) => {
             description: ""
         },
         validationSchema,
-        onSubmit: (values) => {
-            console.log(values);
+        onSubmit: async (values) => {
+            const promise = API.product.postProduct(values).then(() => queryClient.invalidateQueries({
+                queryKey: ['products'],
+            }));
+
+            toast.promise(promise, {
+                loading: "Adding Product...",
+                success: "Saved",
+                error: "Error"
+            })
         },
     });
     return (
@@ -37,7 +51,7 @@ const ProductForm = ({onClose}) => {
                     </GenInput>
                     <div className="grid grid-cols-2 gap-4">
                         <GenInput label="Product Price" id="price" formik={formik}>
-                            <GenInput.Default name="price" type="number" onChange={formik.handleChange}/>
+                            <GenInput.Default name="price" type="number" onChange={formik.handleChange} />
                         </GenInput>
                         <GenInput label="Product Weight(gm)" id="weight" formik={formik}>
                             <GenInput.Default name="weight" type="number" onChange={formik.handleChange} />

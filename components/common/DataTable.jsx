@@ -28,6 +28,7 @@ const DataTable = ({
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
     })
+    
 
     return (
         <>
